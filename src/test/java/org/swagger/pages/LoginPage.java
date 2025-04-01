@@ -19,6 +19,8 @@ public class LoginPage extends BasePage {
     private WebElement usernameInput;
     @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordInput;
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement error;
 
     public boolean inputUserName(String name) {
         try {
@@ -50,5 +52,12 @@ public class LoginPage extends BasePage {
             return false;
         }
     }
-
+    public String ErrorMessege() {
+        try{
+            wait.until(ExpectedConditions.visibilityOf(error));
+            return error.getText();
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
