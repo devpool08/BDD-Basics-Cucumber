@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "C:\\PS\\BDD-Basics-Cucumber\\features\\SwagLabInvalidLogin.feature",
+        features = "C:\\PS\\BDD-Basics-Cucumber\\features\\SwagLabLogin.feature",
         glue = "org.swagger.stepDefinition",
-        plugin = {"pretty", "html:target/cucumber-report"}
+        plugin = {"pretty", "html:target/cucumber-report"},
+        tags = "@RegressionTest"
 )
 public class TestInvalidLoginRunner {
 }

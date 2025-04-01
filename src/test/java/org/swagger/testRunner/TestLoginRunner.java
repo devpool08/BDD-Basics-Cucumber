@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "C:\\PS\\BDD-Basics-Cucumber\\features\\SwagLabLogin.feature",
         glue = "org.swagger.stepDefinition",
-        plugin = {"pretty", "html:target/cucumber-report"}
+        plugin = {"pretty", "html:target/cucumber-report"},
+        tags = "@SmokeTest"
 )
 public class TestLoginRunner {
 
