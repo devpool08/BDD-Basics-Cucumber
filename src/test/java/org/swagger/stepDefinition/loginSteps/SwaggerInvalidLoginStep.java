@@ -1,4 +1,4 @@
-package org.swagger.stepDefinition;
+package org.swagger.stepDefinition.loginSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
