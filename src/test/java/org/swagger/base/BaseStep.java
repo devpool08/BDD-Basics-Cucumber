@@ -21,7 +21,7 @@ import java.util.Properties;
 public class BaseStep {
     public WebDriver driver;
     public SingletonWebDriverFactory factory;
-    public Properties properties;
+    public  Properties properties;
     public FileReader reader;
 
     @SneakyThrows
@@ -55,9 +55,9 @@ public class BaseStep {
         }
     }
 
+
     public void tearDown() {
         factory.quitDriver();
         log.info("{} test Completed Successfully", this.getClass().getName());
     }
-
 }

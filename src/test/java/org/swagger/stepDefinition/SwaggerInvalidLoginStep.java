@@ -1,6 +1,5 @@
 package org.swagger.stepDefinition;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,14 +10,14 @@ import static org.junit.Assert.assertEquals;
 
 public class SwaggerInvalidLoginStep extends BaseStep {
     private LoginPage loginPage;
-    @Given("I open chrome browser for invalid login")
+    @Given("I open the url of Swag Lab")
     public void openChromeBrowser() {
         setUp();
+        openPage(properties.getProperty("SWAGGER_LOGIN_URL"));
     }
-    @When("I navigate to SwagLabs login page And Enter Invalid Credentials")
+    @When("I Enter Invalid Credentials and click log in button int the Login Page")
     public void navigateToSwagLabsLoginPageAndEnterInvalidCredentials() {
         loginPage= new LoginPage(driver);
-        openPage(properties.getProperty("SWAGGER_LOGIN_URL"));
         loginPage.inputUserName("invalid_user");
         loginPage.inputPassword("invalid_password");
         loginPage.clickEnter();
@@ -27,9 +26,6 @@ public class SwaggerInvalidLoginStep extends BaseStep {
     public void iShouldSeeTheErrorMessage() {
         String errorMessage = loginPage.ErrorMessege();
         assertEquals("Epic sadface: Username and password do not match any user in this service", errorMessage);
-    }
-    @And("I close the browser for invalid login")
-    public void closeBrowser() {
         tearDown();
     }
 }
