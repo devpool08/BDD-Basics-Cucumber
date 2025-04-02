@@ -1,15 +1,15 @@
 package org.swagger.testRunner;
 
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "C:\\PS\\BDD-Basics-Cucumber\\src\\test\\resources\\features\\CheckOut.feature",
         glue = {"org.swagger.stepDefinition.checkOutSteps"},
-        plugin = {"pretty", "json:target/cucumber-report.json"}
+        plugin = {
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        }
 )
-public class TestCheckOutRunner {
+public class TestCheckOutRunner extends AbstractTestNGCucumberTests {
 }

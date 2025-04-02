@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="org.swagger.utils.ExtentReportManager"/>
+    </listeners>
+    <test verbose="2" name="C:/PS/BDD-Basics-Cucumber" parallel="classes" thread-count="2">
+        <classes>
+            <class name="org.swagger.testRunner.TestOrderConfirmation"/>
+            <class name="org.swagger.testRunner.TestCheckOutRunner"/>
+            <class name="org.swagger.testRunner.TestLoginRunner"/>
+            <class name="org.swagger.testRunner.TestInvalidLoginRunner"/>
+        </classes>
+    </test>
+</suite>

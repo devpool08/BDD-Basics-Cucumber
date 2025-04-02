@@ -1,15 +1,17 @@
 package org.swagger.testRunner;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+
 @CucumberOptions(
         features = "C:\\PS\\BDD-Basics-Cucumber\\src\\test\\resources\\features\\SwagLabLogin.feature",
         glue = "org.swagger.stepDefinition.loginSteps",
-        plugin = {"pretty", "html:target/cucumber-report"},
+        plugin = {
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
         tags = "@RegressionTest"
 )
-public class TestInvalidLoginRunner {
+public class TestInvalidLoginRunner extends AbstractTestNGCucumberTests {
 }
