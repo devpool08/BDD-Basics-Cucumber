@@ -11,6 +11,7 @@ import org.swagger.pages.InventoryPage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class SwaggerCheckoutStep extends BaseStep {
     private   InventoryPage inventoryPage;
     private CheckOutPage checkOutPage;

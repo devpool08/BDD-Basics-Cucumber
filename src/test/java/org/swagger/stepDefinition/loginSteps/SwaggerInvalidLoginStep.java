@@ -8,6 +8,7 @@ import org.swagger.pages.LoginPage;
 
 import static org.junit.Assert.assertEquals;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class SwaggerInvalidLoginStep extends BaseStep {
     private LoginPage loginPage;
     @Given("I open the url of Swag Lab")
