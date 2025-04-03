@@ -52,7 +52,7 @@ public class LoginPage extends BasePage {
             return false;
         }
     }
-    public String ErrorMessege() {
+    public String getErrorMessege() {
         try{
             wait.until(ExpectedConditions.visibilityOf(error));
             return error.getText();
